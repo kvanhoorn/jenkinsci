@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Email results') {
       steps {
-        emailext(subject: 'Done with Jenkins job', attachLog: true, body: 'Here is the job that ran')
+        emailext(subject: 'Done with Jenkins job', attachLog: true, body: 'Here is the job that ran', to: 'kevin@joeporn.nl')
       }
     }
   }
