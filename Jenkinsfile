@@ -17,9 +17,14 @@ pipeline {
         }
       }
     }
-    stage('Email results') {
+    stage('Ask for email') {
       steps {
-        emailext(subject: 'Done with Jenkins job', attachLog: true, body: 'Here is the job that ran', to: 'kevin@joeporn.nl')
+        input 'Send results to email?'
+      }
+    }
+    stage('Email') {
+      steps {
+        emailext(subject: 'Results', body: 'HYG', attachLog: true)
       }
     }
   }
