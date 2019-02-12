@@ -27,5 +27,10 @@ pipeline {
         emailext(subject: 'Results', body: 'HYG', attachLog: true)
       }
     }
+    stage('Echo latest') {
+      steps {
+        echo 'Special for Niels'
+      }
+    }
   }
 }
