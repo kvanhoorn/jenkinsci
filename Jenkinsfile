@@ -31,5 +31,10 @@ pipeline {
         }
       }
     }
+    stage('Say hello to Elena') {
+      steps {
+        echo 'Hello Elena'
+      }
+    }
   }
 }
